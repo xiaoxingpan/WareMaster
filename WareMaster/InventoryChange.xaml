@@ -1,0 +1,81 @@
+﻿<Window x:Class="WareMaster.InventoryChange"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="Transaction Window" Height="450" Width="269"
+        WindowStyle="None" WindowStartupLocation="CenterOwner"
+        AllowsTransparency="True" Background="Transparent" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Border  Background="#87C4FF" CornerRadius="15" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Border Width="60" Height="60" Padding="3" Background="White" CornerRadius="100" Margin="5,0"
+        DockPanel.Dock="Bottom" HorizontalAlignment="Left">
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Images/WMLetter.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+                <TextBlock Name="txtTitle" Text="Outbound" FontSize="25" FontWeight="SemiBold" Margin="0,18,0,0"
+           HorizontalAlignment="Center" Foreground="#121518" Width="129"/>
+                <Button Name="BtnClose" Grid.Column="1" Panel.ZIndex="1" Click="BtnClose_Click"  Style="{StaticResource topButton}" 
+Margin="0 13 13 0" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <Icon:PackIconMaterial Kind="Close"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Label Content="Search Item:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="txtSearchItem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="10,30,0,0" 
+         TextChanged="txtSearchItem_TextChanged" Grid.ColumnSpan="2"/>
+                <Popup x:Name="itemListPopup" IsOpen="False" StaysOpen="False" PlacementTarget="{Binding ElementName=txtSearchItem}" Grid.ColumnSpan="2">
+                    <ListBox x:Name="itemListBox" Width="200" Height="100" SelectionChanged="itemListBox_SelectionChanged"/>
+                </Popup>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,60,0,0" Grid.ColumnSpan="2">
+                    <Label Content="Item_id:" VerticalAlignment="Center" />
+                    <TextBlock x:Name="txtItemId" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,80,0,0" Grid.ColumnSpan="2">
+                    <Label Content="Itemname:" VerticalAlignment="Center" />
+                    <TextBlock x:Name="txtItemName" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="itemValidation" Foreground="Red" VerticalAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="10,110,0,0" Grid.ColumnSpan="2">
+                    <Label Content="Quantity:" VerticalAlignment="Center" />
+                    <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Width="200" Margin="5,0,0,0"
+             Text="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="quantityValidation" Foreground="Red" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="10,160,0,0" Grid.ColumnSpan="2">
+                    <Label Content="Total:" VerticalAlignment="Center" />
+                    <TextBox x:Name="txtTotal" HorizontalAlignment="Left" Width="200" Margin="5,0,0,0"
+                     Text="{Binding Total, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=N2}"/>
+
+                    <TextBlock x:Name="totalValidation" Foreground="Red" VerticalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="10,210,0,0" Grid.ColumnSpan="2">
+                    <Label Content="Transaction Date:"  VerticalAlignment="Center" />
+                    <DatePicker x:Name="dpTransactionDate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="5,0,0,0" Grid.ColumnSpan="2"
+                    SelectedDate="{Binding Transaction_Date, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBlock x:Name="datelValidation" Foreground="Red" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="10,290,0,0" Grid.ColumnSpan="2">
+                    <Label Content="Username:" VerticalAlignment="Center" />
+                    <TextBlock x:Name="txtUsername" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                </StackPanel>
+
+
+                <Button x:Name="ConfirmButton" Style="{StaticResource addButton}" Content="Confirm" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="80" Margin="0,0,100,10" Click="ConfirmButton_Click" Grid.Column="1"/>
+                <Button x:Name="CancelButton" Style="{StaticResource addButton}" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="80" Margin="0,0,10,10" Click="CancelButton_Click" Grid.Column="1"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

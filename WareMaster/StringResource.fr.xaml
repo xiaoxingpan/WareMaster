@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="current-storage">Stockage actuel</system:String>
+    <system:String x:Key="menu-Items">Articles</system:String>
+    <system:String x:Key="menu-Inventory">Inventaire</system:String>
+    <system:String x:Key="menu-Query">Requête</system:String>
+    <system:String x:Key="menu-Analyse">Analyser</system:String>
+    <system:String x:Key="menu-Users">Utilisatrices</system:String>
+    <system:String x:Key="menu-Exit">Sortie</system:String>
+    <system:String x:Key="menu-New">Nouvelle</system:String>
+    <system:String x:Key="menu-Update">Mise à jour</system:String>
+    <system:String x:Key="menu-Initialize">Initialiser</system:String>
+    <system:String x:Key="menu-Inbound">Entrante</system:String>
+    <system:String x:Key="menu-Outbound">Sortante</system:String>
+    <system:String x:Key="menu-Settle">Régler</system:String>
+    <system:String x:Key="ManageItems">Gérer les articles</system:String>
+    <system:String x:Key="ManageInbound">Gérer les appels entrants</system:String>
+    <system:String x:Key="ManageOutbound">Gérer les sorties</system:String>
+    <system:String x:Key="ManageUsers">Gérer les utilisateurs</system:String>
+    <system:String x:Key="ManageCategories">Gérer les catégories</system:String>
+    <system:String x:Key="Logout">Se déconnecter</system:String>
+    <system:String x:Key="Login">Se connecter</system:String>
+    <system:String x:Key="totalItems">Articles au total:</system:String>
+    <system:String x:Key="filter-by-name">Filtrer par nom</system:String>
+    <system:String x:Key="data-Item-Name">Nom de l'article</system:String>
+    <system:String x:Key="data-Quantity">Quantité</system:String>
+    <system:String x:Key="data-Total">Totale</system:String>
+    <system:String x:Key="data-Date">Date</system:String>
+    <system:String x:Key="Welcome">Bienvenue:</system:String>
+</ResourceDictionary>

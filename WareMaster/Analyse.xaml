@@ -1,0 +1,311 @@
+﻿<Window x:Class="WareMaster.Analyse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Title="Analyse" Height="720" Width="1080" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True" Background="Transparent">
+    <Border Background="#87C4FF" CornerRadius="30" MouseDown="Border_MouseDown" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+        <!--<Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            -->
+        <!-- Left Menu-->
+        <!--
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    -->
+        <!--<RowDefinition Height="100"/>-->
+        <!--
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                -->
+        <!--Menu Icon-->
+        <!--
+                <Button Margin="20,28,0,35" Style="{StaticResource topButton}">
+                    -->
+        <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="Images/favicon.ico" Width="16" Height="16" Margin="0,0,5,0" />
+            </StackPanel>-->
+        <!--
+                    <Icon:PackIconMaterial Kind="Menu"/>
+                </Button>
+
+                <Button Visibility="Hidden" Content="Button" HorizontalAlignment="Left" Height="34" Margin="78,26,0,0" VerticalAlignment="Top" Width="93"/>
+
+                <Border Grid.Row="1" Background="#FF3E47D0" CornerRadius="0 50 0 30">
+                    <DockPanel>
+                        -->
+        <!--Menu Logo-->
+        <!--
+                        <Border Width="60" Height="60" Padding="3" Background="White" CornerRadius="100"
+                        DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="20 -30 0 0">
+                            <Ellipse>
+                                <Ellipse.Fill>
+                                    <ImageBrush ImageSource="/Images/WMLetter.jpg"/>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Border>
+
+                        -->
+        <!--Menu Titles-->
+        <!--
+                        <TextBlock Text="WareMaster" Foreground="White" FontSize="22" FontWeight="SemiBold"
+                           DockPanel.Dock="Top" TextAlignment="Center" Margin="5 25 0 10"/>
+                        <TextBlock Name="TbUserName" Text="" Foreground="#d0bfff" FontSize="14" FontWeight="SemiBold"
+                             DockPanel.Dock="Top" TextAlignment="Center" Margin="5 25 0 10"/>
+
+                        -->
+        <!--Menu Seprator-->
+        <!--
+                        <Separator Margin="25" DockPanel.Dock="Top" Height="0.8" Background="#7e5fdc"/>
+
+                        -->
+        <!--Menu Buttons-->
+        <!--
+                        <StackPanel DockPanel.Dock="Top">
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="SwapVerticalBold"  Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Inventory"></TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="ChartAreaspline"  Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Items"></TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Name="BtnCategory" Style="{StaticResource menuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="ShapePlus" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Category"></TextBlock>
+                                </StackPanel>
+                            </Button>
+                            <Button Style="{StaticResource menuButton}" Click="BtnToHome_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="home" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Dashboard"></TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                        <Button Style="{StaticResource menuButton}" VerticalAlignment="Bottom" DockPanel.Dock="Bottom" Margin="15 0 15 20">
+                            <StackPanel Orientation="Horizontal">
+                                <Icon:PackIconMaterial Kind="Logout"  Style="{StaticResource menuButtonIcon}"/>
+                                <TextBlock Text="Logout"></TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </DockPanel>
+                </Border>
+            </Grid>-->
+
+        <!--Main Section-->
+        <Grid Grid.Column="1" Margin="20,30,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Border Width="60" Height="60" Padding="3" Background="White" CornerRadius="100"
+                        DockPanel.Dock="Bottom" HorizontalAlignment="Left" Margin="20 0 0 0">
+                    <Ellipse>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Images/WMLetter.jpg"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Border>
+                <TextBlock Text="Analyse" FontSize="32" FontWeight="SemiBold" Margin="450,7,0,0"
+                           HorizontalAlignment="Left" Foreground="#121518" Width="350" VerticalAlignment="Top"/>
+                <Button Name="BtnClose" Grid.Column="1" Panel.ZIndex="1" Click="BtnClose_Click"  Style="{StaticResource topButton}" 
+                        Margin="0 13 13 0" Width="30" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <Icon:PackIconMaterial Kind="Close"/>
+                </Button>
+            </Grid>
+            <!--Top Buttons-->
+            <!--
+                <Button Grid.Row="0" Style="{StaticResource topButton}" Margin="780,14,0,14" Background="#dcdcdc">
+                    <Icon:PackIconMaterial Kind="Cog"/>
+                </Button>
+                <Button Grid.Row="0" Style="{StaticResource topButton}" Margin="745,14,0,14">
+                    <Icon:PackIconMaterial Kind="Bell"/>
+                </Button>
+
+                -->
+            <!--Page Title-->
+            <!--
+                <TextBlock Text="Analyse" Grid.Row="1" FontSize="32" FontWeight="SemiBold" Margin="0 20 0 0"
+                       HorizontalAlignment="Left" Foreground="#121518"/>-->
+
+            <!--Seprator-->
+            <Separator Grid.Row="3" Height="1" Background="#dae2ea" Margin="0 -1 0 10"/>
+            <!--<StackPanel Orientation="Horizontal" Grid.Row="4"  HorizontalAlignment="Right">
+                    <DatePicker Language="en-US" HorizontalAlignment="Left" Height="25"  VerticalAlignment="Bottom" Width="191"/>
+                </StackPanel>-->
+
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Border Margin="10 0"  Grid.Column="0" Style="{StaticResource whiteBorder}">
+                    <StackPanel>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Icon:PackIconMaterial Kind="Tools" Width="30" Height="30" Margin="0 0 10 0"/>
+                                <TextBlock Text="Items" Style="{StaticResource titleTextA}" />
+                            </StackPanel>
+                            <TextBlock Text="Compare To ( 200 Last Month)" Style="{StaticResource secondaryText}" />
+                        </StackPanel>
+                        <Slider  x:Name="slider" Style="{DynamicResource SliderStyle1}" Margin="0 5 0 0" IsSelectionRangeEnabled="True" Value="130"  SelectionEnd="{Binding ElementName=slider, Path=Value}" Maximum="200"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Margin="10 0"  Grid.Column="1" Style="{StaticResource whiteBorder}">
+                    <StackPanel>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Icon:PackIconMaterial Kind="ArrowDownBoldCircle" Width="30" Height="30" Margin="0 0 10 0"/>
+                                <TextBlock Text="Inbounce" Style="{StaticResource titleTextA}" />
+                            </StackPanel>
+                            <TextBlock Text="Compare To ( 350 Last Month)" Style="{StaticResource secondaryText}" />
+                        </StackPanel>
+                        <Slider Style="{DynamicResource SliderStyle1}" x:Name="sliderInbounce" Margin="0 5 0 0"  IsSelectionRangeEnabled="True" Value="268" SelectionEnd="{Binding ElementName=sliderInbounce, Path=Value}" Maximum="350"/>
+                    </StackPanel>
+
+                </Border>
+                <Border Margin="10 0"  Grid.Column="2" Style="{StaticResource whiteBorder}" >
+                    <StackPanel>
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Icon:PackIconMaterial Kind="ArrowUpBoldCircle" Width="30" Height="30" Margin="0 0 10 0"/>
+                                <TextBlock Text="Outbounce" Style="{StaticResource titleTextA}" />
+                            </StackPanel>
+                            <TextBlock Text="Compare To ( 220 Last Month)" Style="{StaticResource secondaryText}" />
+                        </StackPanel>
+                        <Slider Style="{DynamicResource SliderStyle1}" x:Name="sliderOutbounce" Margin="0 5 0 0" IsSelectionRangeEnabled="True" Value="180" SelectionEnd="{Binding ElementName=sliderOutbounce, Path=Value}" Maximum="220"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!--inventory chart section-->
+            <Grid Grid.Row="6" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Style="{StaticResource whiteBorder}" Margin="20 20 20 0">
+                    <Grid Margin="15 5">
+                        <!--Title-->
+                        <TextBlock Text="Inventory Figures" Style="{StaticResource titleTextA}" />
+                        <!--Legends-->
+                        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20 20 20 0">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="12" Height="12" Background="#0074ff" CornerRadius="3" />
+                                <TextBlock Text="Inbound" VerticalAlignment="Center" Margin="7 0 20 0" Foreground="#6c879a"/>
+                                <Border Width="12" Height="12" Background="#f96654" CornerRadius="3" />
+                                <TextBlock Text="Outbound" VerticalAlignment="Center" Margin="7 0 0 0" Foreground="#6c879a"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <!--chart-->
+                        <lvc:CartesianChart Grid.Row="1" Margin="5 60 0 10" LegendLocation="None">
+                            <lvc:CartesianChart.DataTooltip>
+                                <lvc:DefaultTooltip Background="Red" Foreground="#ffffff" BulletSize="10" Opacity="0.7" />
+                            </lvc:CartesianChart.DataTooltip>
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Foreground="#90a3b2" ShowLabels="True" MinValue="1" MaxValue="12">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator StrokeThickness="0" Step="1"/>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis Foreground="#90a3b2" ShowLabels="True" MinValue="0" >
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator StrokeThickness="0"/>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+                            <lvc:CartesianChart.Series>
+                                <lvc:LineSeries Title="Inbound" Fill="Transparent" StrokeThickness="3" PointGeometrySize="0"
+                                                    Values="180,240,220,160,300,210,145,200,195,260,270,280">
+                                    <lvc:LineSeries.Stroke>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#ffffff" Offset="0.06" />
+                                            <GradientStop Color="#2889fc" Offset="0.5" />
+                                            <GradientStop Color="#ffffff" Offset="0.93" />
+                                        </LinearGradientBrush>
+                                    </lvc:LineSeries.Stroke>
+                                </lvc:LineSeries>
+                                <lvc:LineSeries Title="Outbound" Fill="Transparent" StrokeThickness="3" PointGeometrySize="0"
+                                        Values="260, 180, 160, 220, 210, 155, 300, 260, 240, 210, 280, 250">
+                                    <lvc:LineSeries.Stroke>
+                                        <LinearGradientBrush>
+                                            <GradientStop Color="#ffffff" Offset="0.06" />
+                                            <GradientStop Color="#fe6c47" Offset="0.5" />
+                                            <GradientStop Color="#ffffff" Offset="0.93" />
+                                        </LinearGradientBrush>
+                                    </lvc:LineSeries.Stroke>
+                                </lvc:LineSeries>
+                            </lvc:CartesianChart.Series>
+                        </lvc:CartesianChart>
+                    </Grid>
+                </Border>
+
+                <!--category chart-->
+                <Border Style="{StaticResource whiteBorder}" Margin="0 20 20 0" Grid.Column="1">
+                    <Grid Margin="15 5">
+                        <!--Title-->
+                        <TextBlock Text="Category" Style="{StaticResource titleTextA}" />
+                        <!--chart-->
+                        <lvc:PieChart LegendLocation="Bottom" Hoverable="True" Grid.Row="1" Margin="5 60 0 10" Series="{Binding PieSeriesCollection}">
+                            <lvc:PieChart.ChartLegend>
+    <lvc:DefaultLegend BulletSize="15" TextBlock.FontSize="15"></lvc:DefaultLegend>
+</lvc:PieChart.ChartLegend>
+<lvc:PieChart.DataTooltip>
+    <lvc:DefaultTooltip BulletSize="20">
+    </lvc:DefaultTooltip>
+</lvc:PieChart.DataTooltip>
+                        </lvc:PieChart>
+                    </Grid>
+                </Border>
+                <!--<lvc:PieChart.Series>
+    <lvc:PieSeries Title="Textile" Values="5"/>
+    <lvc:PieSeries Title="Appliance" Values="6"/>
+    <lvc:PieSeries Title="Furniture" Values="5"/>
+    <lvc:PieSeries Title="Sports Outdoor" Values="4"/>
+    <lvc:PieSeries Title="Food Beverage" Values="4"/>
+</lvc:PieChart.Series>-->
+
+            </Grid>
+
+        </Grid>
+
+        <!--<Grid>
+            <Label Content="Item:" HorizontalAlignment="Left" Height="25" Margin="6,15,0,0" VerticalAlignment="Top" Width="127"/>
+            <ComboBox HorizontalAlignment="Left" Height="25" Margin="151,15,0,0" VerticalAlignment="Top" Width="439"/>
+            <Label Content="Date&#x9;     From:&#x9;&#x9;&#x9;" HorizontalAlignment="Left" Height="25" Margin="6,58,0,0" VerticalAlignment="Top" Width="127"/>
+            <DatePicker HorizontalAlignment="Left" Height="25" Margin="151,58,0,0" VerticalAlignment="Top" Width="191"/>
+            <Label Content="To:" HorizontalAlignment="Left" Height="25" Margin="365,58,0,0" VerticalAlignment="Top" Width="32"/>
+            <DatePicker  Language="en-US"  HorizontalAlignment="Left" Height="25" Margin="399,58,0,0" VerticalAlignment="Top" Width="191"/>
+            <Button Content="Analize" HorizontalAlignment="Left" Height="30" Margin="607,38,0,0" VerticalAlignment="Top" Width="83"/>
+            <Image HorizontalAlignment="Left" Height="237" Margin="69,306,0,0" VerticalAlignment="Top" Width="510" Source="/excel-chart-types.png"/>
+
+        </Grid>-->
+        <!--</Grid>-->
+    </Border>
+</Window>

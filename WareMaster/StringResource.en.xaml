@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="current-storage">Current Storage</system:String>
+    <system:String x:Key="menu-Items">Items</system:String>
+    <system:String x:Key="menu-Inventory">Inventory</system:String>
+    <system:String x:Key="menu-Query">Query</system:String>
+    <system:String x:Key="menu-Analyse">Analyse</system:String>
+    <system:String x:Key="menu-Users">Users</system:String>
+    <system:String x:Key="menu-Exit">Exit</system:String>
+    <system:String x:Key="menu-New">New</system:String>
+    <system:String x:Key="menu-Update">Update</system:String>
+    <system:String x:Key="menu-Initialize">Initialize</system:String>
+    <system:String x:Key="menu-Inbound">Inbount</system:String>
+    <system:String x:Key="menu-Outbound">Outbound</system:String>
+    <system:String x:Key="menu-Settle">Settle</system:String>
+    <system:String x:Key="ManageItems">Manage Items</system:String>
+    <system:String x:Key="ManageInbound">Inventory Inbound</system:String>
+    <system:String x:Key="ManageOutbound">Inventory Outbound</system:String>
+    <system:String x:Key="ManageUsers">Manage Users</system:String>
+    <system:String x:Key="ManageCategories">Manage Categories</system:String>
+    <system:String x:Key="Logout">Logout</system:String>
+    <system:String x:Key="Login">Login</system:String>
+
+    <system:String x:Key="totalItems">Total items: </system:String>
+    <system:String x:Key="filter-by-name">Filter By Name</system:String>
+    <system:String x:Key="data-Item-Name">Item Name</system:String>
+    <system:String x:Key="data-Quantity">Quantity</system:String>
+    <system:String x:Key="data-Total">Total</system:String>
+    <system:String x:Key="data-Date">Date</system:String>
+    <system:String x:Key="Welcome">Welcome: </system:String>
+</ResourceDictionary>

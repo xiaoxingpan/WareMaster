@@ -1,0 +1,69 @@
+﻿<Window x:Class="WareMaster.AddEditUsersDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WareMaster"
+        mc:Ignorable="d"
+        Title="AddEditUsersDialog" Height="600" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        AllowsTransparency="True" Background="Transparent">
+
+    <Border Background="#ccffff" Padding="20" CornerRadius="30" MouseDown="Border_MouseDown">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="User Id" Style="{StaticResource text}" />
+                <TextBlock Grid.Row="1" Text="Username" Style="{StaticResource text}" />
+                <TextBlock Grid.Row="3" Text="Email" Style="{StaticResource text}" />
+                <TextBlock Grid.Row="5" Text="Role" Style="{StaticResource text}" />
+                <TextBlock Grid.Row="7" Text="Password" Style="{StaticResource text}" Visibility="Visible" Name="TbPassowrd"/>
+
+                <TextBlock Name="UserId" Grid.Column="1" Margin="0,10,0,10" Text="-----" Style="{StaticResource text}" />
+
+                <TextBox x:Name="UsernameInput" Grid.Row="1" Grid.Column="1" LostFocus="UsernameInput_LostFocus"  Text="" Style="{StaticResource textBox}"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" Name="LblErrUsername" Visibility="Hidden" FontSize="11" Text="" Foreground="Red" Style="{StaticResource text}" Margin="0,10,0,10"/>
+
+                <TextBox Grid.Row="3" Grid.Column="1" Name="EmailInput" LostFocus="EmailInput_LostFocus" Text="" Style="{StaticResource textBox}"/>
+                <TextBlock Grid.Row="4" Grid.Column="1" Name="LblErrEmail" Visibility="Hidden" FontSize="11" Margin="0,10,0,10" Text="" Foreground="Red" Style="{StaticResource text}" />
+
+                <ComboBox Grid.Row="5" Grid.Column="1" x:Name="RoleComboBox" LostFocus="RoleComboBox_LostFocus" 
+                          SelectedValuePath="Tag" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="250" Height="30" Margin="0,10,0,10" SelectedIndex="0">
+                    <ComboBoxItem Content="user" IsSelected="True">
+                        <ComboBoxItem.Tag>USER</ComboBoxItem.Tag>
+                    </ComboBoxItem>
+                    <ComboBoxItem Content="admin">
+                        <ComboBoxItem.Tag>ADMIN</ComboBoxItem.Tag>
+                    </ComboBoxItem>
+                </ComboBox>
+                <TextBlock Grid.Row="6" Grid.Column="1" Name="LblErrRole" Visibility="Hidden" FontSize="11" Margin="0,10,0,10" Text=""  Foreground="Red" Style="{StaticResource text}"/>
+
+                <TextBox Grid.Row="7" Grid.Column="1" Name="PasswordInput" Visibility="Visible" LostFocus="PasswordInput_LostFocus" Text="" VerticalAlignment="Top" Style="{StaticResource textBox}"/>
+                <TextBlock Grid.Row="8" Grid.Column="1" Name="LblErrPassword" Visibility="Hidden" FontSize="11" Margin="0,10,0,10" Text="" Foreground="Red" Style="{StaticResource text}"/>
+                <Grid Grid.Row="9" Grid.Column="1" Margin="0,40,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button IsCancel="True" Content="Cancel"  Margin="0,0,10,0" Style="{StaticResource addButton}" Width="100" Background="Gray" RenderTransformOrigin="0.791,-4.445"/>
+                    <Button Name="BtnSave" Grid.Column="1" IsDefault="True" Content="Save" Margin="10,0,0,0" Width="100" Style="{StaticResource addButton}" Click="BtnSave_Click"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
